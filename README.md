@@ -1,9 +1,9 @@
 ## Project: Build a Traffic Sign Recognition Program
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
-Overview
----  
-Udacity Self Driving Car Term1 Project2
+Overview - Udacity Self Driving Car Term 1 Project 2
+
+----------  
 
 **Build a Traffic Sign Recognition Project**
 
@@ -56,10 +56,9 @@ Here is some traffic sign images before and after grayscaling. ![Traffic Signs w
 The images are normalized data is normalized TODO 
 
 
-
 ####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
-We follow up on the LeNet architecture, additionally we add two dropout layers to prevent the network from overtraining. The network looks like:
+We follow up on the LeNet architecture, additionally we add two dropout layers to prevent the network from overfitting. The network looks like:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -95,7 +94,7 @@ We used the AdamOptimizer in place of gradient descent this has shown to be bett
 
 ####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-1. Started with the LeNet model and 3 color channels for the image input. This has been successfully used identify digits with images of a similar sized (28x28).  
+1. We started with the LeNet model and 3 color channels for the image input. This was used as it been successfully deployed to identify digits with images of a similar size (28x28). Digits and traffic signs are similar to each other is primary underlying drawing features 
 2. Improved by moving to greyscale and normalizing the images
 3. Added a dropout layer to improve test accuracy
 4. Tuned the Fully connected layers by changing their sizes
@@ -125,10 +124,14 @@ These images look straightforward to classify. Our classifier should be able to 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 On running the classifier we get the expected result
+```
+Real Labels:  [17 11 14 25 12 34  3 14]
+Predicted Labels:  [17 11 14 25 12 34  3 14]
+```
 
 ![German Traffic Sign Classified](static/classified.png)
 
-The model was able to correctly guess 8 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set as these images are clear.
+The model was able to correctly guess 8 of the 8 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set as these images are clear with good contrast.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
@@ -143,7 +146,7 @@ We compute the softmax probabilities of the top 5 predictions for each image. Th
 ![Image 7](static/7.png)
 ![Image 8](static/8.png)
 
-The softmax probability of the topmost prediction of almost all the images are close to 100%. Image 3 looks interesting as the probability for the correct classification is not as high as one would expect. This is probably because the stop sign in the picture almost fills the image (training set seems to have images with more spaced out, the traffic sign occupies a smaller part of the image)
+The softmax probability of the topmost prediction of almost all the images are close to 100%. Image 3 (Stop Sign) looks interesting as the probability for the correct classification is not as high as one would expect. This is probably because the stop sign in the picture almost fills the image (training set seems to have images with more spaced out, the traffic sign occupies a smaller part of the image)
  
  
 
