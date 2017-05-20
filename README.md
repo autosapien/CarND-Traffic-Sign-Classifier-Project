@@ -124,7 +124,7 @@ Here are some German traffic signs that I found on the web:
 
 ![German Traffic Sign Images From the Web](static/web_images.png)
 
-These images look straightforward to classify. Our classifier should be able to classify these correctly. 
+These images look straightforward to classify. All the images have the traffic signs that are fully visible i.e. there is not artifact covering any part of the image. The images all appear to have been taken front on with limited shearing, in addition they have limited rotation. These qualities should help with correct identification, our classifier should be able to classify these correctly. Let us test is out!!
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
